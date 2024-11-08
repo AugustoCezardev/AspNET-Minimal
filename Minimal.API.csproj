@@ -1,19 +1,41 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>14068538-103c-46dd-9da4-e647ebd2e944</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.10" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Core" Version="8.0.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.10">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-	<PackageReference Include ="SQLitePCLRaw.bundle_e_sqlite3" Version="2.1.8" />
+    <PackageReference Include="MiniValidation" Version="0.9.1" />
+	<PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3" Version="2.1.8" />
+	<PackageReference Include="Swashbuckle.AspNetCore" Version="6.9.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="EndpointHandlers\FoodHandler\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="EndpointHandlers\FoodHandler\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="EndpointHandlers\FoodHandler\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="EndpointHandlers\FoodHandler\**" />
   </ItemGroup>
 
 </Project>
